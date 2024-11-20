@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+
+  .button_:hover {
+    margin: 1px;
+  }
+
+  #button1 {
+    z-index: 23232;
+    position: absolute;
+    width: 140px;
+    height: 55px;
+    top: 115px;
+    left: 36px;
+    cursor: pointer;
+  }
+
+  #button2 {
+    position: absolute;
+    width: 142px;
+    height: 56px;
+    top: 170px;
+    left: 36px;
+    cursor: pointer;
+  }
+
+  #button3 {
+    z-index: 23232;
+    position: absolute;
+    width: 140px;
+    height: 54px;
+    top: 231px;
+    left: 36px;
+    cursor: pointer;
+  }
+
+  #button4 {
+    z-index: 23232;
+    position: absolute;
+    width: 140px;
+    height: 58px;
+    top: 287px;
+    left: 36px;
+    cursor: pointer;
+  }
+  
+  .tools {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+  }
+
+  .gamebox {
+    height: 319px;
+    overflow: hidden;
+  }
+}
