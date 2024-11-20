@@ -8,9 +8,18 @@ const SideBarButtons = [
 ]
 
 const ToolButtons = [
-    { id: 'tool1', img: 'content/tools/bag.png', loadId: 1 },
-    { id: 'tool3', img: 'content/tools/task.png', loadId: 3 },
-    { id: 'tool4', img: 'content/tools/bookmark.png', loadId: 4 },
+    { id: 'tool1', img: 'content/tools/bag.png', loadId: 5 },
+    { id: 'tool3', img: 'content/tools/task.png', loadId: 6 },
+    { id: 'tool4', img: 'content/tools/bookmark.png', loadId: 7 },
+]
+
+const TipButtons = [
+    { id: 'tip1', img: 'content/tip/help.png', loadId: 8 },
+    { id: 'tip2', img: 'content/tip/official.png', loadId: 9 },
+    { id: 'tip3', img: 'content/tip/topup.png', loadId: 10 },
+    { id: 'tip4', img: 'content/tip/support.png', loadId: 11 },
+    { id: 'tip5', img: 'content/tip/discuss.png', loadId: 12 },
+    { id: 'tip6', img: 'content/tip/quit.png', loadId: 99 },
 ]
 
 export default function Index() {
@@ -19,26 +28,12 @@ export default function Index() {
     }
     const handleLoad = (id: number) => {
         console.log(id);
-        // $("#baginfo").hide();
-        // $(".gamebox").width(788)
-        // zdFlag = 0;
-        // if (n == 3) {
-        //     $("#gw").attr("src", "petInfo.html?" + Math.random())
-        // } else if (n == 4) {
-        //     $("#gw").attr("src", "PlyaerInfo.html?" + Math.random())
-        // } else if (n == 2) {
-        //     $("#gw").attr("src", "map.html?12")
-        // } else if (n == 1) {
-        //     $("#gw").attr("src", "BattleMap.html?" + Math.random())
-        // } else if (n == 99) {
-        //     window.location.href = "index.html?" + Math.random();
-        // }
     };
 
     return (
         <div id="main">
             {/* left sidebar */}
-            <div className="pt-33px pl-0">
+            <div className="pt-33px pl-0 fl" style={{ backgroundImage: `url(content/sidebar1/side.jpg)`, width: '197px', height: '369px', position: 'relative' }}>
                 {SideBarButtons.map((button) => (
                     <div
                         key={button.id}
@@ -49,23 +44,43 @@ export default function Index() {
                     ></div>
                 ))}
             </div>
-            {/* right corner content */}
-            <div className="tools">
-                {ToolButtons.map((button) => (
-                    <div
-                        key={button.id}
-                        id={button.id}
-                        className="button_"
-                        style={{ backgroundImage: `url(${button.img})`, width: '47px', height: '44px', display: 'inline-block', cursor: 'pointer' }}
-                        onClick={() => handleLoad(button.loadId)}
-                    ></div>
-                ))}
-            </div>
             {/* gamebox */}
-            <div className="gamebox">
-                {/*  */}
-                
+            <div className="gamebox fl" style={{ backgroundImage: `url(content/content.jpg)`, width: '803px', height: '369px', paddingTop: '32px', position: 'relative' }}>
+                {/* right corner content */}
+                <div className="tools">
+                    {ToolButtons.map((button) => (
+                        <div
+                            key={button.id}
+                            id={button.id}
+                            className="button_"
+                            style={{ backgroundImage: `url(${button.img})`, width: '47px', height: '44px', display: 'inline-block', cursor: 'pointer' }}
+                            onClick={() => handleLoad(button.loadId)}
+                        ></div>
+                    ))}
+                </div>
             </div>
+            {/* bottom */}
+            <div>
+                <div className="chat fl" style={{ backgroundImage: `url(content/chatbg.jpg)`, width: '710px', height: '239px', position: 'relative' }}>
+
+                </div>
+                {/* tip */}
+                <div className="Tip fl">
+                    <div className="tipboard" style={{ backgroundImage: `url(content/tip/tipboard.png)`, width: '290px', height: '169px', position: 'relative' }}> </div>
+                    <div style={{ width: '290px', height: '70px', position: 'relative', backgroundImage: `url(content/tip/bottom.png)` }}>
+                        {TipButtons.map((button) => (
+                            <div
+                                key={button.id}
+                                id={button.id}
+                                className="button_"
+                                style={{ backgroundImage: `url(${button.img})`, width: '48px', height: '45px', display: 'inline-block', cursor: 'pointer' }}
+                                onClick={() => handleLoad(button.loadId)}
+                            ></div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 }

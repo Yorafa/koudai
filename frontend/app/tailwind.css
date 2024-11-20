@@ -10,6 +10,10 @@ body {
     color-scheme: dark;
   }
 
+  .fl {
+    float: left;
+  }
+
   .button_:hover {
     margin: 1px;
   }
